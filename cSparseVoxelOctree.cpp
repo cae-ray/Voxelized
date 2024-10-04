@@ -18,8 +18,8 @@ sOctreeNode::~sOctreeNode() {
 
 cSparseVoxelOctree::cSparseVoxelOctree(const int& inputX, const int& inputY) {
     mRoot = new sOctreeNode();
-    octreePosition[0] = inputX;
-    octreePosition[1] = inputY;
+    mOctreePosition[0] = inputX;
+    mOctreePosition[1] = inputY;
 }
 
 // Sparse voxel octree
