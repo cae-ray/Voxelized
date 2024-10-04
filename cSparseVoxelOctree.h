@@ -23,21 +23,22 @@ struct sOctreeNode {
 class cSparseVoxelOctree
 {
 public:
-    int mOctreePosition[2];
+    int mOctreeLocalX;
+    int mOctreeLocalY;
 
-     cSparseVoxelOctree(const int& inputX, const int& inputY);
+     cSparseVoxelOctree(const int& octreeLocalX, const int& octreeLocalY);
     ~cSparseVoxelOctree() { delete mRoot; };
     
     void SetAllVoxels();
-    void SetVoxel    (int& x, int& y, int& z) { SetVoxelRecursive         (mRoot, x, y, z, 0); };
-    bool IsVoxelSet  (int& x, int& y, int& z) { return IsVoxelSetRecursive(mRoot, x, y, z, 0); };
+    void SetVoxel    (const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ) { SetVoxelRecursive         (mRoot, voxelWorldX, voxelWorldY, voxelWorldZ, 0); };
+    bool IsVoxelSet  (const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ) { return IsVoxelSetRecursive(mRoot, voxelWorldX, voxelWorldY, voxelWorldZ, 0); };
 
 private:
     sOctreeNode* mRoot;
 
-    void SetVoxelRecursive  (      sOctreeNode* node, const int& x, const int& y, const int& z, const int& depth);
-    bool IsVoxelSetRecursive(const sOctreeNode* node, const int& x, const int& y, const int& z, const int& depth);
-    int  GetChildIndex      (                         const int& x, const int& y, const int& z, const int& depth);
+    void SetVoxelRecursive  (      sOctreeNode* node, const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ, const int& depth);
+    bool IsVoxelSetRecursive(const sOctreeNode* node, const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ, const int& depth);
+    int  GetChildIndex      (                         const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ, const int& depth);
 
 };
 ////////////////////////////////////////////////////////////////

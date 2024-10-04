@@ -21,6 +21,9 @@
     <ClCompile Include="cSparseVoxelOctree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cSparseVoxelOctreeManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cSparseVoxelOctree.h">
@@ -30,6 +33,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="octreeSettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cSparseVoxelOctreeManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
