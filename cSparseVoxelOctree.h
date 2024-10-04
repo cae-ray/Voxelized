@@ -39,7 +39,6 @@ private:
     void SetVoxelRecursive  (      sOctreeNode* node, const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ, const int& depth);
     bool IsVoxelSetRecursive(const sOctreeNode* node, const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ, const int& depth);
     int  GetChildIndex      (                         const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ, const int& depth);
-
 };
 ////////////////////////////////////////////////////////////////
 // Sparse voxel octree 
