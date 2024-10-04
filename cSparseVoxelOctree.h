@@ -32,8 +32,6 @@ public:
     void SetVoxel    (int& x, int& y, int& z) { SetVoxelRecursive         (mRoot, x, y, z, 0); };
     bool IsVoxelSet  (int& x, int& y, int& z) { return IsVoxelSetRecursive(mRoot, x, y, z, 0); };
 
-    // TODO store world coordinates divided by octreeSize to allow multiple octrees to exist in the world
-
 private:
     sOctreeNode* mRoot;
 
