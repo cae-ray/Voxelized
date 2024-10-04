@@ -23,7 +23,7 @@ struct sOctreeNode {
 class cSparseVoxelOctree
 {
 public:
-    int octreePosition[2];
+    int mOctreePosition[2];
 
      cSparseVoxelOctree(const int& inputX, const int& inputY);
     ~cSparseVoxelOctree() { delete mRoot; };
