@@ -13,7 +13,7 @@ struct sOctreeNode {
     ~sOctreeNode();
 
     // If no bits are set, it's a leaf node (no children)
-    bool IsLeaf() { return mVoxelMask.None(); };
+    bool IsLeaf() const { return mVoxelMask.None(); };
 };
 ////////////////////////////////////////////////////////////////
 // Octree node
@@ -23,12 +23,14 @@ struct sOctreeNode {
 class cSparseVoxelOctree
 {
 public:
-     cSparseVoxelOctree() { mRoot = new sOctreeNode(); };
-    ~cSparseVoxelOctree() { delete mRoot; };
+    int octreePosition[2];
 
+     cSparseVoxelOctree(const int& inputX, const int& inputY);
+    ~cSparseVoxelOctree() { delete mRoot; };
+    
     void SetAllVoxels();
-    void SetVoxel    (int x, int y, int z) { SetVoxelRecursive         (mRoot, x, y, z, 0); };
-    bool IsVoxelSet  (int x, int y, int z) { return IsVoxelSetRecursive(mRoot, x, y, z, 0); };
+    void SetVoxel    (int& x, int& y, int& z) { SetVoxelRecursive         (mRoot, x, y, z, 0); };
+    bool IsVoxelSet  (int& x, int& y, int& z) { return IsVoxelSetRecursive(mRoot, x, y, z, 0); };
 
     // TODO store world coordinates divided by octreeSize to allow multiple octrees to exist in the world
 
@@ -37,7 +39,7 @@ private:
 
     void SetVoxelRecursive  (      sOctreeNode* node, const int& x, const int& y, const int& z, const int& depth);
     bool IsVoxelSetRecursive(const sOctreeNode* node, const int& x, const int& y, const int& z, const int& depth);
-    int GetChildIndex       (                         const int& x, const int& y, const int& z, const int& depth);
+    int  GetChildIndex      (                         const int& x, const int& y, const int& z, const int& depth);
 
 };
 ////////////////////////////////////////////////////////////////
