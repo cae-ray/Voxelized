@@ -17,8 +17,14 @@ void cSparseVoxelOctreeManager::DeleteOctree(const int& octreeLocalX, const int&
 
 // Voxel manipulation passthrough
 ////////////////////////////////////////////////////////////////
+void cSparseVoxelOctreeManager::SetAllVoxels(const int& voxelWorldX, const int& voxelWorldY) {
+	mUnorderedMap[GetOctreeKey(voxelWorldX, voxelWorldY)]->SetAllVoxels();
+}
 void cSparseVoxelOctreeManager::SetVoxelCall(const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ) {
 	mUnorderedMap[GetOctreeKey(voxelWorldX, voxelWorldY)]->SetVoxel(voxelWorldX, voxelWorldY, voxelWorldZ);
+}
+void cSparseVoxelOctreeManager::IsVoxelSetCall(const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ) {
+	mUnorderedMap[GetOctreeKey(voxelWorldX, voxelWorldY)]->IsVoxelSet(voxelWorldX, voxelWorldY, voxelWorldZ);
 }
 ////////////////////////////////////////////////////////////////
 // Voxel manipulation passthrough
