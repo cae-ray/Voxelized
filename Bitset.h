@@ -2,11 +2,11 @@
 #include "octreeSettings.h"
 
 // Custom bitset class for 8 bits
-class cBitSet {
+class BitSet {
     unsigned char mBits;    // Storage for 8 bits
 
 public:
-    cBitSet() : mBits(0) {}
+    BitSet() : mBits(0) {}
 
     // Set a specific bit
     void Set(int index) {

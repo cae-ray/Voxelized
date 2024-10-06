@@ -5,7 +5,7 @@
 namespace SVO {
     namespace Octree {
         struct OctreeNode {
-            cBitSet      mVoxelMask;
+            BitSet      mVoxelMask;
             OctreeNode* mChildren[nodeChildren];
 
             // mChildren is initialized to null in constructor and deleted in destructor
