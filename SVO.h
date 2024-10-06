@@ -5,8 +5,8 @@
 namespace SVO {
     namespace Octree {
         struct OctreeNode {
-            BitSet      mVoxelMask;
-            OctreeNode* mChildren[nodeChildren];
+            Math::BitSet mVoxelMask;
+            OctreeNode*  mChildren[nodeChildren];
 
             // mChildren is initialized to null in constructor and deleted in destructor
             OctreeNode();
@@ -16,8 +16,7 @@ namespace SVO {
             bool IsLeaf() const { return mVoxelMask.None(); };
         };
 
-        class SparseVoxelOctree
-        {
+        class SparseVoxelOctree {
         public:
             int mOctreeLocalX;
             int mOctreeLocalY;
