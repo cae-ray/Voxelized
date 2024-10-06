@@ -4,7 +4,7 @@
 #include <iostream>
 
 int main() {
-    cSparseVoxelOctreeManager svoManager;
+    SVO::Manager::cSparseVoxelOctreeManager svoManager;
 
     svoManager.CreateOctree(0, 0);
     svoManager.SetVoxelCall(0, 0, 0);

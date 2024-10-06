@@ -2,43 +2,39 @@
 #include "cBitset.h"
 #include "octreeSettings.h"
 
-// Octree node
-////////////////////////////////////////////////////////////////
-struct sOctreeNode {
-    cBitSet      mVoxelMask;
-    sOctreeNode* mChildren[nodeChildren];
+namespace SVO {
+    namespace Octree {
+        struct sOctreeNode {
+            cBitSet      mVoxelMask;
+            sOctreeNode* mChildren[nodeChildren];
 
-    // mChildren is initialized to null in constructor and deleted in destructor
-     sOctreeNode();
-    ~sOctreeNode();
+            // mChildren is initialized to null in constructor and deleted in destructor
+            sOctreeNode();
+            ~sOctreeNode();
 
-    // If no bits are set, it's a leaf node (no children)
-    bool IsLeaf() const { return mVoxelMask.None(); };
-};
-////////////////////////////////////////////////////////////////
-// Octree node
+            // If no bits are set, it's a leaf node (no children)
+            bool IsLeaf() const { return mVoxelMask.None(); };
+        };
 
-// Sparse voxel octree
-////////////////////////////////////////////////////////////////
-class cSparseVoxelOctree
-{
-public:
-    int mOctreeLocalX;
-    int mOctreeLocalY;
+        class cSparseVoxelOctree
+        {
+        public:
+            int mOctreeLocalX;
+            int mOctreeLocalY;
 
-     cSparseVoxelOctree(const int& octreeLocalX, const int& octreeLocalY);
-    ~cSparseVoxelOctree() { delete mRoot; };
-    
-    void SetAllVoxels();
-    void SetVoxel    (const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ) { SetVoxelRecursive         (mRoot, voxelWorldX, voxelWorldY, voxelWorldZ, 0); };
-    bool IsVoxelSet  (const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ) { return IsVoxelSetRecursive(mRoot, voxelWorldX, voxelWorldY, voxelWorldZ, 0); };
+            cSparseVoxelOctree(const int& octreeLocalX, const int& octreeLocalY);
+            ~cSparseVoxelOctree() { delete mRoot; };
 
-private:
-    sOctreeNode* mRoot;
+            void SetAllVoxels();
+            void SetVoxel(const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ) { SetVoxelRecursive(mRoot, voxelWorldX, voxelWorldY, voxelWorldZ, 0); };
+            bool IsVoxelSet(const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ) { return IsVoxelSetRecursive(mRoot, voxelWorldX, voxelWorldY, voxelWorldZ, 0); };
 
-    void SetVoxelRecursive  (      sOctreeNode* node, const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ, const int& depth);
-    bool IsVoxelSetRecursive(const sOctreeNode* node, const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ, const int& depth);
-    int  GetChildIndex      (                         const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ, const int& depth);
-};
-////////////////////////////////////////////////////////////////
-// Sparse voxel octree 
+        private:
+            sOctreeNode* mRoot;
+
+            void SetVoxelRecursive(sOctreeNode* node, const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ, const int& depth);
+            bool IsVoxelSetRecursive(const sOctreeNode* node, const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ, const int& depth);
+            int  GetChildIndex(const int& voxelWorldX, const int& voxelWorldY, const int& voxelWorldZ, const int& depth);
+        };
+    }
+}
