@@ -1,6 +1,6 @@
 #pragma once
 #include "Bitset.h"
-#include "octreeSettings.h"
+#include "OctreeSettings.h"
 
 namespace SVO {
     namespace Octree {

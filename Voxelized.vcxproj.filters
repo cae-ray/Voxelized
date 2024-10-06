@@ -24,7 +24,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SVO.cpp">
@@ -44,10 +44,7 @@
     <ClInclude Include="SVO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Bitset.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="octreeSettings.h">
+    <ClInclude Include="OctreeSettings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SVOManager.h">
@@ -57,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Vector.h">
+      <Filter>Math\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bitset.h">
       <Filter>Math\Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -131,7 +131,7 @@
     <ClCompile Include="SVO.cpp" />
     <ClCompile Include="SVOManager.cpp" />
     <ClCompile Include="Vector.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bitset.h" />
@@ -139,7 +139,7 @@
     <ClInclude Include="SVO.h" />
     <ClInclude Include="SVOManager.h" />
     <ClInclude Include="Vector.h" />
-    <ClInclude Include="octreeSettings.h" />
+    <ClInclude Include="OctreeSettings.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

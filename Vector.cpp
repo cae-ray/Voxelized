@@ -1,4 +1,5 @@
 #include "Vector.h"
+
 #include <corecrt_math.h>
 
 namespace Math {
