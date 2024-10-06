@@ -1,13 +1,13 @@
 #pragma once
-#include "cSparseVoxelOctree.h"
+#include "SVO.h"
 
 #include <unordered_map>
 #include <string>
 
 namespace SVO {
     namespace Manager {
-        class cSparseVoxelOctreeManager {
-            std::unordered_map<std::string, SVO::Octree::cSparseVoxelOctree*> mUnorderedMap;
+        class SparseVoxelOctreeManager {
+            std::unordered_map<std::string, SVO::Octree::SparseVoxelOctree*> mUnorderedMap;
 
         public:
             void CreateOctree(const int& octreeLocalX, const int& octreeLocalY);

@@ -13,30 +13,51 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{acca9b77-86aa-408b-9a5b-1d80ab6270c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math\Header Files">
+      <UniqueIdentifier>{8610511c-e187-40d9-9b71-c086b95d476a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math\Source Files">
+      <UniqueIdentifier>{ceee9312-4f32-4237-b159-1741ae1438e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cSparseVoxelOctree.cpp">
+    <ClCompile Include="SVO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cSparseVoxelOctreeManager.cpp">
+    <ClCompile Include="SVOManager.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector.cpp">
+      <Filter>Math\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cSparseVoxelOctree.h">
+    <ClInclude Include="SVO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cBitset.h">
+    <ClInclude Include="Bitset.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="octreeSettings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cSparseVoxelOctreeManager.h">
+    <ClInclude Include="SVOManager.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Math\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

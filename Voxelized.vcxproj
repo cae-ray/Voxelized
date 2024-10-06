@@ -127,14 +127,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="cSparseVoxelOctree.cpp" />
-    <ClCompile Include="cSparseVoxelOctreeManager.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="SVO.cpp" />
+    <ClCompile Include="SVOManager.cpp" />
+    <ClCompile Include="Vector.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cBitset.h" />
-    <ClInclude Include="cSparseVoxelOctree.h" />
-    <ClInclude Include="cSparseVoxelOctreeManager.h" />
+    <ClInclude Include="Bitset.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="SVO.h" />
+    <ClInclude Include="SVOManager.h" />
+    <ClInclude Include="Vector.h" />
     <ClInclude Include="octreeSettings.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
