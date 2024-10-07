@@ -9,7 +9,7 @@ namespace SVO {
 		}
 
 		void SparseVoxelOctreeManager::DeleteOctree(const int& octreeLocalX, const int& octreeLocalY) {
-			std::string key = GetOctreeKey(octreeLocalX, octreeLocalY);
+			std::uint64_t key = GetOctreeKey(octreeLocalX, octreeLocalY);
 
 			delete(mUnorderedMap[key]);
 			mUnorderedMap.erase(key);
@@ -27,8 +27,8 @@ namespace SVO {
 			mUnorderedMap[GetOctreeKey(voxelWorldX, voxelWorldY)]->IsVoxelSet(voxelWorldX, voxelWorldY, voxelWorldZ);
 		}
 
-		std::string SparseVoxelOctreeManager::GetOctreeKey(const int& octreeLocalX, const int& octreeLocalY) {
-			return std::to_string(octreeLocalX) + " " + std::to_string(octreeLocalY);
+		std::int64_t SparseVoxelOctreeManager::GetOctreeKey(const int& octreeLocalX, const int& octreeLocalY) {
+			return (static_cast<std::int64_t>(octreeLocalX) << 32) | (static_cast<std::int64_t>(octreeLocalX) & 0xFFFFFFFF);	// Luleå Arvid's code, ask him if it breaks lmao
 		}
 	}
 }
