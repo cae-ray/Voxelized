@@ -9,7 +9,7 @@ namespace SVO {
             OctreeNode*  mChildren[nodeChildren];
 
             // mChildren is initialized to null in constructor and deleted in destructor
-            OctreeNode();
+             OctreeNode();
             ~OctreeNode();
 
             // If no bits are set, it's a leaf node (no children)
@@ -21,7 +21,7 @@ namespace SVO {
             int mOctreeLocalX;
             int mOctreeLocalY;
 
-            SparseVoxelOctree(const int& octreeLocalX, const int& octreeLocalY);
+             SparseVoxelOctree(const int& octreeLocalX, const int& octreeLocalY);
             ~SparseVoxelOctree() { delete mRoot; };
 
             void SetAllVoxels();
