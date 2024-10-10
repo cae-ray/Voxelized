@@ -8,7 +8,11 @@ namespace Math {
 		T x, y, z;
 		
 		Vec3 operator-(const Vec3& b) const {
-			return { x - b.x, y - b.y, z - b.z};
+			return { x - b.x, y - b.y, z - b.z };
+		}
+
+		Vec3 operator+(const Vec3& b) const {
+			return { x + b.x, y + b.y, z + b.z };
 		}
 
 		Vec3(T x, T y, T z) : x(x), y(y), z(z) {};
