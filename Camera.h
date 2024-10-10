@@ -11,4 +11,11 @@ class Camera {
 	Math::Vec3	   <float> cameraRight = Math::Normalize  (Math::Cross(up, cameraDirection));
 	Math::Vec3	   <float> cameraUp	   = Math::Cross	  (cameraDirection, cameraRight);
 	Math::Matrix4x4<float> view		   = Math::lookAt	  (cameraPosition, cameraTarget, up);
+
+public: 
+	void				   SetPosition	  (const Math::Vec3<float>& newPosition);
+	void				   SetTarget	  (const Math::Vec3<float>& newTarget);
+	Math::Vec3<float>	   CalculateTarget();
+	void				   UpdateCamera	  ();
+	Math::Matrix4x4<float> GetViewMatrix  () const;
 };
