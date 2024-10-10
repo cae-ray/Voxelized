@@ -130,12 +130,12 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="SVO.cpp" />
     <ClCompile Include="SVOManager.cpp" />
-    <ClCompile Include="Vector.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bitset.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Matrix.h" />
     <ClInclude Include="SVO.h" />
     <ClInclude Include="SVOManager.h" />
     <ClInclude Include="Vector.h" />

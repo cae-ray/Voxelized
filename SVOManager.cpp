@@ -28,7 +28,7 @@ namespace SVO {
 		}
 
 		std::int64_t SparseVoxelOctreeManager::GetOctreeKey(const int& octreeLocalX, const int& octreeLocalY) {
-			return (static_cast<std::int64_t>(octreeLocalX) << 32) | (static_cast<std::int64_t>(octreeLocalX) & 0xFFFFFFFF);	// Luleå Arvid's code, ask him if it breaks lmao
+			return (static_cast<std::int64_t>(octreeLocalX) << 32) | (static_cast<std::int64_t>(octreeLocalX) & 0xFFFFFFFF);	// Arvid's code, ask him if it breaks lmao
 		}
 	}
 }

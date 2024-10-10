@@ -5,20 +5,19 @@ namespace Math {
 	template <class T>
 	class Vec3 {
 	public:
-		Vec3 operator-(const Vec3& other) const {
-			return { x - other.x, y - other.y, z - other.z};
+		T x, y, z;
+		
+		Vec3 operator-(const Vec3& b) const {
+			return { x - b.x, y - b.y, z - b.z};
 		}
 
-		T x, y, z;
-
 		Vec3(T x, T y, T z) : x(x), y(y), z(z) {};
-
 	};
 
 	template <class T>
-	Vec3<T> Normalize(const Vec3<T>& vec) {
-		T magnitude = static_cast<T>(sqrt(vec.x * vec.x + vec.y * vec.y + vec.z * vec.z));
-		return { vec.x / magnitude, vec.y / magnitude, vec.z / magnitude };
+	Vec3<T> Normalize(const Vec3<T>& a) {
+		T magnitude = static_cast<T>(sqrt(a.x * a.x + a.y * a.y + a.z * a.z));
+		return { a.x / magnitude, a.y / magnitude, a.z / magnitude };
 	};
 
 	template < class T>
