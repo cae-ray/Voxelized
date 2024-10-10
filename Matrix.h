@@ -21,13 +21,24 @@ namespace Math {
 				data[i++] = value;
 			}
 		}
+
+		static Matrix4x4<T> Identity() {
+			Matrix4x4<T> identityMatrix;
+
+			identityMatrix(0, 0) = static_cast<T>(1);
+			identityMatrix(1, 1) = static_cast<T>(1);
+			identityMatrix(2, 2) = static_cast<T>(1);
+			identityMatrix(3, 3) = static_cast<T>(1);
+
+			return identityMatrix;
+		}
 	};
 
 	template<class T>
 	Matrix4x4<T> lookAt(const Vec3<T>& position, const Vec3<T>& target, const Vec3<T>& up) {
-		Vec3<T> forward  = (target - position).Normalize();
-		Vec3<T> right	 = forward.Cross(up).Normalize();
-		Vec3<T> cameraUp = right.Cross(forward).Normalize();
+		Vec3<T> forward  = Normalize(target - position);
+		Vec3<T> right	 = Normalize(Cross(forward, up));
+		Vec3<T> cameraUp = Normalize(Cross(right, forward));
 
 		Matrix4x4<T> viewMatrix = Matrix4x4<T>::Identity();
 
@@ -43,23 +54,11 @@ namespace Math {
 		viewMatrix(2, 1) = -forward.y;
 		viewMatrix(2, 2) = -forward.z;
 
-		viewMatrix(0, 3) = -right.Dot	(position);
-		viewMatrix(1, 3) = -cameraUp.Dot(position);
-		viewMatrix(2, 3) =  forward.Dot	(position);
+		viewMatrix(0, 3) = -Dot(right, position);
+		viewMatrix(1, 3) = -Dot(cameraUp, position);
+		viewMatrix(2, 3) =  Dot(forward, position);
 
 		return viewMatrix;
-	}
-
-	template<class T>
-	Matrix4x4<T> Identity() {
-		Matrix4x4<T> identityMatrix;
-
-		identityMatrix(0, 0) = static_cast<T>(1);
-		identityMatrix(1, 1) = static_cast<T>(1);
-		identityMatrix(2, 2) = static_cast<T>(1);
-		identityMatrix(3, 3) = static_cast<T>(1);
-		
-		return identityMatrix;
 	}
 
 	template<class T>
